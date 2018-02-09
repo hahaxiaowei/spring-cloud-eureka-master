@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 1113
+eureka:
+  instance:
+    hostname: server3
+    metadataMap:
+      instanceId: ${spring.application.name}:${random.value}
+  client:
+    serviceUrl:
+      defaultZone: http://server1:1111/eureka/,http://server2:1112/eureka/

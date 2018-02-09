@@ -1,0 +1,16 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://config-user@192.168.13.53:8999/config-eureka-Server/config-file.git
+          username: config-user
+          password: 123456789
+          search-paths:
+            - rx-test-config
+            - rx-demo-provider
+            - rx-demo-client
